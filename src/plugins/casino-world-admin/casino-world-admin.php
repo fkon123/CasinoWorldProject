@@ -7,7 +7,6 @@ Author: Fil123
 */
 
 function create_custom_tables() {
-
     global $wpdb;
     $charset_collate = $wpdb->get_charset_collate();
 
@@ -33,10 +32,11 @@ function create_custom_tables() {
         PRIMARY KEY (id)
     ) $charset_collate;";
 
-    $create_script_list = array($casino_menu_table_script, $casino_entities_table_script);
-
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-    dbDelta($create_script_list);
+
+    //TODO dbDelta can take array of queries but it didn't work for me
+    dbDelta($casino_menu_table_script);
+    dbDelta($casino_entities_table_script);
 }
 
 register_activation_hook(__FILE__, 'create_custom_tables');
