@@ -1,0 +1,41 @@
+# WordPress core files
+/wp-admin/
+/wp-includes/
+
+# Ignore all WordPress files
+!wp-content/
+
+# wp-content specific files
+wp-content/plugins/
+/wp-content/mu-plugins/
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/uploads/
+/wp-content/languages/
+
+/wp-content/themes/*/node_modules/
+/wp-content/themes/*/dist/
+/wp-content/themes/*/vendor/
+/wp-content/themes/*/composer.lock
+/wp-content/themes/*/package-lock.json
+/wp-content/themes/*/yarn.lock
+/.htaccess
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Environment
+.env
+
+# Backup files
+*.zip
+*.tar.gz
+*.sql
+
+# IDE/Editor specific
+.idea/
+.vscode/
