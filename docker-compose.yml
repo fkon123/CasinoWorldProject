@@ -41,7 +41,7 @@ services:
 
   phpmyadmin:
     container_name: ${CONTAINER_NAME}-phpmyadmin
-    image: phpmyadmin:5.2.1-fpm
+    image: phpmyadmin/phpmyadmin
     env_file: .env
     environment:
       PMA_HOST: database
