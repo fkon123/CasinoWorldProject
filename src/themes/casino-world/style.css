@@ -7,3 +7,7 @@ Tags: custom theme, casino, gambling, sports betting
 Version: 1.0.0
 Requires PHP: 8.0
 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
