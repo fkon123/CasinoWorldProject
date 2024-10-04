@@ -11,3 +11,14 @@ Tags: custom theme, casino, gambling, sports betting
 Version: 1.0.0
 Requires PHP: 8.0
 */
+
+
+@layer utilities {
+    .group:hover .group-hover\:block {
+        display: block;
+    }
+
+    ul li a:hover {
+        background-color: #e5e7eb; /* Light gray hover background */
+    }
+}

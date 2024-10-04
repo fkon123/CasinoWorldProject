@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino World</title>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
-    <nav>
-        <h1  class="bg-blue-500">Casino World</h1>
-    </nav>
+<header class="bg-purple-900 text-white py-4">
+    <div class="container mx-auto flex justify-between items-center">
+
+        <h1 class="text-3xl font-bold">Casino World</span></h1>
+
+        <nav>
+            <ul class="flex space-x-6 text-lg">
+               
+                <li class="relative group">
+                <a href="#" class="inline-block">Online Casinos</a>
+                <ul class="absolute left-0 hidden group-hover:block bg-white text-black rounded shadow-lg mt-2 w-48">
+                    <?php
+                    global $wpdb;
+                    $casino_menus = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_menus");
+                    foreach ($casino_menus as $casino_menu) {
+                        echo '<li><a href="' . esc_url($casino_menu->url) . '" class="block px-4 py-2 hover:bg-gray-200">' . esc_html($casino_menu->name) . '</a></li>';
+                    }
+                    ?>
+                </ul>
+                </li>
+                <li><a href="#">Slots</a></li>
+                <li><a href="#">Software</a></li>
+                <li><a href="#">Bonuses</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Blackjack</a></li>
+                <li><a href="#">Roulette</a></li>
+                <li><a href="#">Live Casino</a></li>
+                <li><a href="#">Poker</a></li>
+                <li><a href="#">Extra</a></li>
+  
+            </ul>
+        </nav>
+    </div>
 </header>
-<div>
-    <?php
-    global $wpdb;
-    $casinos = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_entities");
-    foreach ($casinos as $casino) {
-        ?>
-        <div>
-            <img src="<?php echo esc_url($casino->image_url); ?>" alt="<?php echo esc_attr($casino->name); ?>">
-            <h2><?php echo esc_html($casino->name); ?></h2>
-            <p><?php echo esc_html($casino->bonus); ?></p>
-            <p><?php echo esc_html($casino->description); ?></p>
-            <a href="<?php echo esc_url($casino->url); ?>">Activate Bonus</a>
-        </div>
-        <?php
-    }
-    ?>
-</div>
 
