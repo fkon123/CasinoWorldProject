@@ -22,5 +22,11 @@ function casino_world_enqueue_scripts() {
 }
 add_action('wp_enqueue_scripts', 'casino_world_enqueue_scripts');
 
+function casino_world_enqueue_admin_styles() {
+    wp_enqueue_style('tailwindcss-admin', get_template_directory_uri() . '/output.css', array(), '1.0.0', 'all');
+}
+add_action('admin_enqueue_scripts', 'casino_world_enqueue_admin_styles');
+
+
 
 
