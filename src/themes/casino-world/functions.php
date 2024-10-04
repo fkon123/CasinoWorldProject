@@ -28,5 +28,9 @@ function casino_world_enqueue_admin_styles() {
 add_action('admin_enqueue_scripts', 'casino_world_enqueue_admin_styles');
 
 
+add_filter('show_admin_bar', '__return_false');
+
+
+
 
 
