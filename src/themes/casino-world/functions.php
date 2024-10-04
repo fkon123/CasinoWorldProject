@@ -17,3 +17,10 @@ function casino_world_admin_page_content() {
 }
 
 
+function casino_world_enqueue_scripts() {
+    wp_enqueue_style('casino-world-tailwind', get_template_directory_uri() . '/output.css', array(), '1.0', 'all');
+}
+add_action('wp_enqueue_scripts', 'casino_world_enqueue_scripts');
+
+
+

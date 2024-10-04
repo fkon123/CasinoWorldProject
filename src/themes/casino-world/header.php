@@ -9,6 +9,6 @@
 <body <?php body_class(); ?>>
 <header>
     <nav>
-        
+        <h1  class="bg-blue-500">Casino World</h1>
     </nav>
 </header>
