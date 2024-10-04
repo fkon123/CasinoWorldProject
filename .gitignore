@@ -44,7 +44,7 @@ Thumbs.db
 node_modules/
 
 # Ignore compiled output.css
-/wp-content/themes/casino-world/output.css
+/src/themes/casino-world/output.css
 
 # Ignore other build artifacts if necessary
 /dist/
