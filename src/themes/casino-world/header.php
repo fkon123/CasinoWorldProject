@@ -19,7 +19,7 @@
                 <ul class="absolute left-0 hidden group-hover:block bg-white text-black rounded shadow-lg mt-2 w-48">
                     <?php
                     global $wpdb;
-                    $casino_menus = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_menus");
+                    $casino_menus = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_entities");
                     foreach ($casino_menus as $casino_menu) {
                         echo '<li><a href="' . esc_url($casino_menu->url) . '" class="block px-4 py-2 hover:bg-gray-200">' . esc_html($casino_menu->name) . '</a></li>';
                     }
