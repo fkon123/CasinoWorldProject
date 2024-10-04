@@ -9,7 +9,7 @@
 <header class="bg-purple-900 text-white py-4">
     <div class="container mx-auto flex justify-between items-center">
 
-        <h1 class="text-3xl font-bold">Casino World</span></h1>
+        <h1 class="text-3xl">Casino <span class="font-bold">World</span></span></h1>
 
         <nav>
             <ul class="flex space-x-6 text-lg">
