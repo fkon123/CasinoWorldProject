@@ -10,6 +10,23 @@ if (!current_user_can('manage_options')) {
 
 global $wpdb;
 
+if (isset($_POST['submit_menu'])) {
+    $menu_name = sanitize_text_field($_POST['menu_name']);
+    $menu_url = esc_url($_POST['menu_url']);
+    $table_name = $wpdb->prefix . 'casino_menus';
+    $wpdb->insert(
+        $table_name,
+        array(
+            'name' => $menu_name,
+            'url' => $menu_url
+        ),
+        array(
+            '%s',
+            '%s'
+        )
+    );
+    echo '<div class="updated"><p>Menu item added successfully!</p></div>';
+}
 if (isset($_POST['submit_entity'])) {
     $casino_name = sanitize_text_field($_POST['casino_name']);
     $casino_rating = floatval($_POST['casino_rating']);
@@ -49,7 +66,21 @@ if (isset($_POST['submit_entity'])) {
 
 <h1 class="text-3xl font-bold mb-5">Casino World Admin Page</h1>
 <div class="wrap max-w-3xl mx-auto">
-   
+
+    <form method="post" action="" class="space-y-8">
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold mb-4">Add New Menu Item</h2>
+            <div class="mb-4">
+                <label for="menu_name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                <input type="text" name="menu_name" id="menu_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-4">
+                <label for="menu_url" class="block text-gray-700 text-sm font-bold mb-2">URL:</label>
+                <input type="text" name="menu_url" id="menu_url" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <button type="submit" name="submit_menu" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Menu Item</button>
+        </div>
+    </form>
     <form method="post" action="" class="space-y-8">
         <div class="bg-white shadow-md rounded-lg p-6">
             <h2 class="text-2xl font-semibold mb-4">Add New Casino Entity</h2>
@@ -85,5 +116,3 @@ if (isset($_POST['submit_entity'])) {
         </div>
     </form>
 </div>
-
-
