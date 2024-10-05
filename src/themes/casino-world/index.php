@@ -26,7 +26,7 @@
 
                     $is_featured = $index === 1;
                     ?>
-                    <div class="<?php echo $is_featured ? 'w-1/3 bg-white shadow-lg rounded-lg p-6 transform scale-110' : 'w-1/4 bg-purple-800 text-white rounded-lg p-6'; ?>">
+                    <div class="<?php echo $is_featured ? 'w-1/3 bg-white text-black shadow-lg rounded-lg p-6 transform scale-110' : 'w-1/4 bg-purple-800 text-white rounded-lg p-6'; ?>">
                         <div class="text-center">
                             <img src="<?php echo get_template_directory_uri() . esc_url( $casino->image_url ); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mx-auto mb-4 h-20 w-20 rounded-full">
                             <h3 class="text-xl font-bold"><?php echo esc_html($casino->name); ?></h3>
