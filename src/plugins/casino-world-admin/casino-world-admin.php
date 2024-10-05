@@ -109,7 +109,7 @@ function insert_dummy_data($navbar_items_table, $casino_entities_table) {
         'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
         'review_url' => '#',
         'url' => '#',
-        'image_url' => 'https://example.com/images/casinoa.jpg'
+        'image_url' => '/images/PoaddypowerLogo/PoaddypowerLogo.png'
     ));
     $wpdb->insert($casino_entities_table, array(
         'name' => 'Unibet Casino',
@@ -121,7 +121,7 @@ function insert_dummy_data($navbar_items_table, $casino_entities_table) {
         'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
         'review_url' => '#',
         'url' => '#',
-        'image_url' => 'https://example.com/images/casinob.jpg'
+        'image_url' => '/images/UnibetLogo/UnibetLogo.png'
     ));
     $wpdb->insert($casino_entities_table, array(
         'name' => 'Betano Casino',
@@ -133,7 +133,7 @@ function insert_dummy_data($navbar_items_table, $casino_entities_table) {
         'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s',
         'review_url' => '#',
         'url' => '#',
-        'image_url' => 'https://example.com/images/casinob.jpg'
+        'image_url' => '/images/BetanoCasino/BetanoCasino.png'
     ));
 }
 
