@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="bg-purple-900" <?php body_class(); ?>>
 <header class="bg-purple-900 text-white py-4">
     <div class="container mx-auto flex justify-between items-center">
 
