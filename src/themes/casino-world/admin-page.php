@@ -35,7 +35,7 @@ if (isset($_POST['submit_entity'])) {
     $casino_code = sanitize_text_field($_POST['casino_code']);
     $casino_bonus_percent = intval($_POST['casino_bonus_percent']);
     $casino_bonus_amount_limit = intval($_POST['casino_bonus_amount_limit']);
-    $casino_great_offer = isset($_POST['casino_great_offer']) ? 1 : 0;
+    $casino_is_enabled = isset($_POST['casino_is_enabled']) ? 1 : 0;
     $casino_url = esc_url($_POST['casino_url']);
     $casino_imageurl = esc_url($_POST['casino_imageurl']);
     $casino_description = sanitize_textarea_field($_POST['casino_description']);
@@ -51,7 +51,7 @@ if (isset($_POST['submit_entity'])) {
             'code' => $casino_code,
             'bonus_percent' => $casino_bonus_percent,
             'bonus_amount_limit' => $casino_bonus_amount_limit,
-            'great_offer' => $casino_great_offer,
+            'is_enabled' => $is_enabled,
             'url' => $casino_url,
             'image_url' => $casino_imageurl,
             'description' => $casino_description,
@@ -118,8 +118,8 @@ if (isset($_POST['submit_entity'])) {
                 <input type="number" name="casino_bonus_amount_limit" id="casino_bonus_amount_limit" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
-                <label for="casino_great_offer" class="block text-gray-700 text-sm font-bold mb-2">Great Offer:</label>
-                <input type="checkbox" name="casino_great_offer" id="casino_great_offer" class="leading-tight focus:outline-none focus:shadow-outline">
+                <label for="casino_is_enabled" class="block text-gray-700 text-sm font-bold mb-2">Is Enabled:</label>
+                <input type="checkbox" name="casino_is_enabled" id="casino_is_enabled" class="leading-tight focus:outline-none focus:shadow-outline">
             </div>
             <div class="mb-4">
                 <label for="casino_url" class="block text-gray-700 text-sm font-bold mb-2">Casino URL:</label>
