@@ -21,11 +21,4 @@ Requires PHP: 8.0
     ul li a:hover {
         background-color: #e5e7eb; /* Light gray hover background */
     }
-
-}
-
-
-body {
-    background-color: #4A148C;/* Set default background color to purple */
-    color: black; /* Set default text color to white for contrast */
 }
