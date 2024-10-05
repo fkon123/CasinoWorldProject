@@ -23,11 +23,24 @@
                 $casinos = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_entities LIMIT 3");
 
                 foreach ($casinos as $index => $casino) {
+                    // TODO: If a casino is_enabled, disable all other casinos
+                    $is_enabled = $casino->is_enabled;
+                
+                    if ($is_enabled) {
+                        // Add logic for when the casino is enabled
+                        $container_class = 'w-1/3 bg-white text-black shadow-lg rounded-lg p-6 transform scale-110';
+                        $great_offer_image = '<div class="relative block mt-4">
+                        <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute -top-6 -left-6 w-12 h-12">
+                    </div>';
+                    } else {
 
-                    $is_featured = $index === 1;
+                        $container_class = 'w-1/4 bg-purple-800 text-white rounded-lg p-6';
+                        $great_offer_image = '';
+                    }
                     ?>
-                    <div class="<?php echo $is_featured ? 'w-1/3 bg-white text-black shadow-lg rounded-lg p-6 transform scale-110' : 'w-1/4 bg-purple-800 text-white rounded-lg p-6'; ?>">
+                    <div class="<?php echo $container_class; ?>">
                         <div class="text-center">
+                        <?php echo $great_offer_image; ?>
                             <img src="<?php echo get_template_directory_uri() . esc_url( $casino->image_url ); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mx-auto mb-4 h-20 w-20 rounded-full">
                             <h3 class="text-xl font-bold"><?php echo esc_html($casino->name); ?></h3>
                             <p class="mt-4 text-gray-300"><?php echo esc_html($casino->description); ?></p>
@@ -36,6 +49,7 @@
                     </div>
                     <?php
                 }
+                
                 ?>
             </div>
         </div>
