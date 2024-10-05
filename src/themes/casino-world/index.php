@@ -11,7 +11,7 @@
         <div class="py-12 relative z-10">
             <div class="container mx-auto text-center">
                 <h2 class="text-5xl font-bold">Best <span class="text-pink-500">Online Casino</span> Guide</h2>
-                <p class="mt-4">Welcome to Casino World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum pharetra urna non faucibus.</p>
+                <p class="mt-4">Welcome to Casino World - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum pharetra urna non faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed et sapien vel nisi venenatis pellentesque. Praesent vestibulum enim non tortor sagittis lacinia. Aenean sed euismod nibh, at tempor leo. Morbi malesuada consectetur sapien in bibendum.</p>
             </div>
         </div>
 
