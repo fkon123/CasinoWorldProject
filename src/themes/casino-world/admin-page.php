@@ -14,7 +14,7 @@ global $wpdb;
 if (isset($_POST['submit_menu'])) {
     $menu_name = sanitize_text_field($_POST['menu_name']);
     $menu_url = esc_url($_POST['menu_url']);
-    $table_name = $prefix . 'navbar_items';
+    $table_name = $wpdb->prefix . 'navbar_items';
     $wpdb->insert(
         $table_name,
         array(
@@ -39,9 +39,8 @@ if (isset($_POST['submit_entity'])) {
     $casino_url = esc_url($_POST['casino_url']);
     $casino_imageurl = esc_url($_POST['casino_imageurl']);
     $casino_description = sanitize_textarea_field($_POST['casino_description']);
-    $casino_review = sanitize_textarea_field($_POST['casino_review']);
 
-    $table_name = $prefix . 'casino_entities';
+    $table_name = $wpdb->prefix . 'casino_entities';
 
     $wpdb->insert(
         $table_name,
@@ -51,11 +50,10 @@ if (isset($_POST['submit_entity'])) {
             'code' => $casino_code,
             'bonus_percent' => $casino_bonus_percent,
             'bonus_amount_limit' => $casino_bonus_amount_limit,
-            'is_enabled' => $is_enabled,
+            'is_enabled' => $casino_is_enabled,
             'url' => $casino_url,
             'image_url' => $casino_imageurl,
             'description' => $casino_description,
-            'review_text' => $casino_review
         ),
         array(
             '%s', 
@@ -64,7 +62,6 @@ if (isset($_POST['submit_entity'])) {
             '%d',
             '%d',
             '%d',
-            '%s',
             '%s',
             '%s',
             '%s'
@@ -132,11 +129,6 @@ if (isset($_POST['submit_entity'])) {
             <div class="mb-4">
                 <label for="casino_description" class="block text-gray-700 text-sm font-bold mb-2">Description:</label>
                 <textarea name="casino_description" id="casino_description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
-            </div>
-            <div class="mb-4">
-                <label for="casino_review" class="block text-gray-700 text-sm font-bold mb-2">Review Text:</label>
-                <textarea name="casino_review"
-                id="casino_review" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
             </div>
             <button type="submit" name="submit_entity" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Casino</button>
         </div>
