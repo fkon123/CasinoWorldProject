@@ -59,43 +59,43 @@ function insert_dummy_data($navbar_items_table, $casino_entities_table) {
     // Insert dummy data for navbar items
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Online Casinos',
-        'url' => '/online-casinos'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Slots',
-        'url' => '/slots'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Software',
-        'url' => '/software'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Bonuses',
-        'url' => '/bonuses'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'News',
-        'url' => '/news'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Blackjack',
-        'url' => '/blackjack'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Roulette',
-        'url' => '/roulette'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Live Casino',
-        'url' => '/live-casino'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Poker',
-        'url' => '/poker'
+        'url' => '#'
     ));
     $wpdb->insert($navbar_items_table, array(
         'title' => 'Extra',
-        'url' => '/extra'
+        'url' => '#'
     ));
 
     // Insert dummy data for casino entities

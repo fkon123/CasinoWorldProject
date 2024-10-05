@@ -11,30 +11,41 @@
         <h1 class="text-3xl">Casino <span class="font-bold">World</span></h1>
 
         <nav>
-            <ul class="flex space-x-6 text-lg">
-                <li class="relative group">
-                    <a href="#" class="inline-block">Online Casinos</a>
+    <ul class="flex space-x-6 text-lg">
+        <li class="relative group">
+            <a href="#" class="inline-block">Online Casinos</a>
 
-                    <ul class="absolute left-0 top-full hidden group-hover:block bg-white text-black rounded shadow-lg w-48 z-20">
-                        <?php
-                        global $wpdb;
-                        $casino_menus = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}casino_entities");
-                        foreach ($casino_menus as $casino_menu) {
-                            echo '<li><a href="' . esc_url($casino_menu->url) . '" class="block px-4 py-2 hover:bg-gray-200">' . esc_html($casino_menu->name) . '</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </li>
-                <li><a href="#">Slots</a></li>
-                <li><a href="#">Software</a></li>
-                <li><a href="#">Bonuses</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Blackjack</a></li>
-                <li><a href="#">Roulette</a></li>
-                <li><a href="#">Live Casino</a></li>
-                <li><a href="#">Poker</a></li>
-                <li><a href="#">Extra</a></li>
+            <ul class="absolute left-0 top-full hidden group-hover:block bg-white text-black rounded shadow-lg w-48 z-20">
+                <?php
+                
+                global $wpdb;
+                $casino_entities_table = $wpdb->prefix . 'casino_entities';
+                $casino_entities = $wpdb->get_results("SELECT * FROM {$casino_entities_table}");
+
+                foreach ($casino_entities as $casino_entity) {
+                    $casino_url = esc_url($casino_entity->url);
+                    $casino_name = esc_html($casino_entity->name);
+
+                    echo '<li><a href="' . $casino_url . '" class="block px-4 py-2 hover:bg-gray-200">' . $casino_name . '</a></li>';
+                }
+                ?>
             </ul>
-        </nav>
+        </li>
+
+        <?php
+        $casino_menus_table = $wpdb->prefix . 'navbar_items';
+        $casino_menus = $wpdb->get_results("SELECT * FROM {$casino_menus_table}");
+
+        foreach ($casino_menus as $casino_menu) {
+            $menu_url = esc_url($casino_menu->url);
+            $menu_title = esc_html($casino_menu->title);
+
+            echo '<li><a href="' . $menu_url . '">' . $menu_title . '</a></li>';
+        }
+        ?>
+    </ul>
+</nav>
+
+
     </div>
 </header>
