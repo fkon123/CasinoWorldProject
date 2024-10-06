@@ -29,11 +29,11 @@
                     $is_enabled = $casino->is_enabled;
 
                     if ($is_enabled) {
-                        $container_class = 'w-full sm:w-1/2 md:w-1/3 bg-primary-white text-black shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform relative';
+                        $container_class = 'w-full sm:w-1/2 md:w-1/3 bg-primary-white text-active-card-bold-title shadow-lg rounded-lg p-6 transform relative';
                         $great_offer_image = '<div class="relative block mt-4">
                             <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute top-10 w-32 h-16">
                         </div>';
-                        $activate_button = '<a href="' . esc_url($casino->url) . '" class="mt-6 inline-block px-6 py-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded-full">Activate Bonus</a>';
+                        $activate_button = '<a href="' . esc_url($casino->url) . '" class="mt-6 inline-block px-6 py-2 bg-active-btn-bg hover:bg-active-btn-bg-hover text-white font-bold rounded-full">Activate Bonus</a>';
                     } else {
                         $container_class = 'w-full sm:w-1/2 md:w-1/4 bg-cards-purple text-white rounded-lg p-6 relative';
                         $great_offer_image = '';
@@ -58,7 +58,7 @@
                             </div>
                             <p class="mt-4 text-gray-300">
                                 <?php 
-                                    $truncated_description = substr(esc_html($casino->description), 0, 50);
+                                    $truncated_description = substr(esc_html($casino->description), 0, 80);
                                     echo $truncated_description . '...';
                                 ?>
                             </p>

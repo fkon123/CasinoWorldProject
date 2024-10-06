@@ -19,7 +19,7 @@
 
         <!-- Mobile Hamburger Button -->
         <button class="block sm:hidden text-white" id="menu-toggle">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
@@ -41,7 +41,7 @@
                         echo '<a href="' . $menu_url . '" class="inline-flex items-center text-primary-white">' . $menu_title;
                         echo '<img src="' . get_template_directory_uri() . '/images/Arrow/Arrow.png" class="inline-block ml-2" alt="Dropdown Arrow" style="width:12px; height:auto;">';
                         echo '</a>';
-                        echo '<ul class="absolute left-0 top-full hidden group-hover:block bg-white text-black rounded shadow-lg w-48 z-20 mt-2">';
+                        echo '<ul class="absolute left-0 top-full hidden group-hover:block bg-white text-black rounded shadow-lg w-48 z-20 mt-1">';
                         
                         $casino_entities_table = $wpdb->prefix . 'casino_entities';
                         $casino_entities = $wpdb->get_results("SELECT * FROM {$casino_entities_table}");
