@@ -7,21 +7,26 @@
 </head>
 <body class="font-montserrat overflow-x-hidden" <?php body_class(); ?>>
 
-<header class="bg-primary-purple text-primary-white py-8 relative z-10">
+<header class="bg-primary-purple text-primary-white py-6 relative z-10">
 
-    <!-- Ellipse Background - Keep this inside the header but behind the logo and nav -->
-    <div class="absolute" style="top: -105px; left: 155px; width: 598px; height: 598px; background: linear-gradient(180deg, #69458E 0%, #462667 100%); opacity: 0.7; border-radius: 50%; z-index: 0;"></div>
+    <div class="absolute top-[-50px] sm:top-[-105px] left-[50px] sm:left-[155px] w-[300px] sm:w-[598px] h-[300px] sm:h-[598px] bg-gradient-to-b from-[#69458E] to-[#462667] opacity-70 rounded-full z-0"></div>
 
-    <!-- Header Content Container -->
     <div class="container mx-auto flex justify-between items-center relative z-10 px-4 sm:px-6 md:px-8">
         <!-- Logo Section -->
         <div class="flex-shrink-0">
             <img src="<?php echo get_template_directory_uri(); ?>/images/Logo/Logo.svg" alt="Logo Casino World" class="h-6">
         </div>
 
+        <!-- Mobile Hamburger Button -->
+        <button class="block sm:hidden text-white" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
         <!-- Navigation Menu -->
-        <nav>
-            <ul class="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-6 text-lg">
+        <nav class="hidden sm:flex flex-col sm:flex-row sm:space-x-6 sm:space-y-0 text-lg" id="menu">
+            <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-6 text-primary-white bg-primary-purple">
                 <?php
                 global $wpdb;
                 $casino_menus_table = $wpdb->prefix . 'navbar_items';
@@ -33,7 +38,7 @@
 
                     if (strtolower($menu_title) === 'online casinos') {
                         echo '<li class="relative group">';
-                        echo '<a href="' . $menu_url . '" class="inline-flex items-center">' . $menu_title;
+                        echo '<a href="' . $menu_url . '" class="inline-flex items-center text-primary-white">' . $menu_title;
                         echo '<img src="' . get_template_directory_uri() . '/images/Arrow/Arrow.png" class="inline-block ml-2" alt="Dropdown Arrow" style="width:12px; height:auto;">';
                         echo '</a>';
                         echo '<ul class="absolute left-0 top-full hidden group-hover:block bg-white text-black rounded shadow-lg w-48 z-20 mt-2">';
@@ -50,7 +55,7 @@
                         echo '</ul>';
                         echo '</li>';
                     } else {
-                        echo '<li><a href="' . $menu_url . '" class="inline-block hover:text-gray-300 transition-colors duration-300">' . $menu_title . '</a></li>';
+                        echo '<li><a href="' . $menu_url . '" class="inline-block text-primary-white hover:text-gray-300 transition-colors duration-300">' . $menu_title . '</a></li>';
                     }
                 }
                 ?>
@@ -58,6 +63,16 @@
         </nav>
     </div>
 </header>
+
+<script>
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>
 
 <?php wp_footer(); ?>
 </body>
