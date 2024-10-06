@@ -42,10 +42,7 @@
                 ?>
                     <div class="<?php echo $container_class; ?>">
                         <div class="flex items-center relative">
-                          
                             <img src="<?php echo get_template_directory_uri() . esc_url($casino->image_url); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mb-4 h-20 w-20 mr-4">
-
-                    
                             <div>
                                 <h3 class="text-xl font-bold"><?php echo esc_html($casino->name); ?></h3>
                                 <p class="text-sm text-gray-500 mt-1"><?php echo esc_html($casino->code); ?></p>
@@ -54,7 +51,7 @@
                         <hr class="border-t-2 border-black opacity-15 my-4">
 
                         <!-- Star rating -->
-                        <span class="absolute top-4 right-4 text-white rounded-full px-2 py-1 text-sm font-bold">
+                        <span class="absolute top-4 right-4 <?php echo $is_enabled ? 'text-active-card-bold-title' : 'text-cards-text-pink'; ?> rounded-full px-2 py-1 text-sm font-bold">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/Star/Star.png" alt="Star" class="inline-block h-4 w-4 mr-1">
                             <?php echo esc_html($casino->rating); ?>
                         </span>
@@ -69,9 +66,9 @@
                         </div>
 
                         <p class="mt-4 text-gray-300 text-center">
-                            <?php 
-                                $truncated_description = substr(esc_html($casino->description), 0, 80);
-                                echo $truncated_description . '...';
+                            <?php
+                            $truncated_description = substr(esc_html($casino->description), 0, 80);
+                            echo $truncated_description . '...';
                             ?>
                         </p>
 
