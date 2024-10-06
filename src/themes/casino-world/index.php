@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="bg-primary-purple text-white py-12 relative z-1">
+<div class="bg-primary-purple text-white py-20 relative z-1">
 
     <div class="relative" style="overflow: hidden;">
 
