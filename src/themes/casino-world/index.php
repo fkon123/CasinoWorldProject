@@ -27,24 +27,27 @@
                     $is_enabled = $casino->is_enabled;
                 
                     if ($is_enabled) {
-                        // Add logic for when the casino is enabled
+                        
                         $container_class = 'w-1/3 bg-white text-black shadow-lg rounded-lg p-6 transform scale-110';
                         $great_offer_image = '<div class="relative block mt-4">
-                        <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute -top-6 -left-6 w-12 h-12">
+                        <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute top-10 w-50 h-20">
                     </div>';
+                    $activate_button = '<a href="' . esc_url( $casino->url ) . '" class="mt-6 inline-block px-6 py-2 bg-red-500 hover:bg-green-700 text-white font-bold rounded-full">Activate Bonus</a>';
+                    
                     } else {
 
                         $container_class = 'w-1/4 bg-purple-800 text-white rounded-lg p-6';
                         $great_offer_image = '';
+                        $activate_button = '<a href="' . esc_url( $casino->url ) . '" class="mt-6 inline-block px-6 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded-full">Activate Bonus</a>';
                     }
                     ?>
                     <div class="<?php echo $container_class; ?>">
                         <div class="text-center">
                         <?php echo $great_offer_image; ?>
-                            <img src="<?php echo get_template_directory_uri() . esc_url( $casino->image_url ); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mx-auto mb-4 h-20 w-20 rounded-full">
+                            <img src="<?php echo get_template_directory_uri() . esc_url( $casino->image_url ); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mx-auto mb-4 h-20 w-20">
                             <h3 class="text-xl font-bold"><?php echo esc_html($casino->name); ?></h3>
                             <p class="mt-4 text-gray-300"><?php echo esc_html($casino->description); ?></p>
-                            <a href="<?php echo esc_url($casino->url); ?>" class="mt-6 inline-block px-6 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded-full">Activate Bonus</a>
+                            <?php echo $activate_button; ?>
                         </div>
                     </div>
                     <?php
