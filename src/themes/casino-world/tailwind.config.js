@@ -9,6 +9,7 @@ module.exports = {
         'primary-purple': 'var(--primary-purple)',
         'primary-white': 'var(--primary-white)',
         'cards-small-line': 'var(--cards-small-line)',
+        'title-bold-purple': 'var(--title-bold-purple)',
         'lines-purple': 'var(--lines-purple)',
         'cards-purple': 'var(--cards-purple)',
         'cards-text-pink': 'var(--cards-text-pink)',
@@ -22,7 +23,7 @@ module.exports = {
         'active-btn-bg-hover': 'var(--active-btn-bg-hover)',
       },
       fontFamily: {
-        montserrat: ['var(--font-family-montserrat)', 'sans-serif'],
+        montserrat: ['var(--font-family-montserrat)'],
       },
       fontSize: {
         '14': 'var(--font-size-14)',

@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body class="font-montserrat" <?php body_class(); ?>>
 <header class="bg-primary-purple text-primary-white py-8">
     <div class="container mx-auto flex justify-between items-center">
 
-    <img src="<?php echo get_template_directory_uri(); ?>/images/Logo/Logo.svg" alt="Logo Casino World">
+    <img src="<?php echo get_template_directory_uri(); ?>/images/Logo/Logo.svg" alt="Logo Casino World" class="pl-8">
         <nav>
             <ul class="flex space-x-6 text-lg">
                 <?php
