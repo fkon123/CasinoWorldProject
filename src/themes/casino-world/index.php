@@ -1,12 +1,14 @@
 <?php get_header(); ?>
 
-<div class="bg-primary-purple text-white py-20 relative z-1">
+<!-- Main Content -->
+<div class="bg-primary-purple text-white py-20 relative z-1 overflow-x-hidden">
 
-    <div class="relative" style="overflow: hidden;">
+    <div class="relative overflow-hidden">
 
+        <!-- Text Section -->
         <div class="py-4 relative z-10">
-            <div class="container mx-auto text-center text-cards-small-line max-w-screen-md px-6">
-                <h2 class="text-5xl font-bold text-primary-white leading-tight">
+            <div class="container mx-auto text-center max-w-screen-md px-4 sm:px-6 md:px-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary-white leading-tight">
                     Best <span class="text-title-bold-purple">Online Casino</span> Guide
                 </h2>
                 <p class="mt-4 leading-relaxed">
@@ -15,8 +17,9 @@
             </div>
         </div>
 
-        <div class="container mx-auto py-12 relative z-10">
-            <div class="flex justify-center items-start space-x-6">
+        <!-- Casino Cards Section -->
+        <div class="container mx-auto py-12 relative z-10 px-4 sm:px-6 md:px-8">
+            <div class="flex flex-wrap justify-center items-start space-y-6 sm:space-y-0 sm:space-x-6">
                 <?php
                 global $wpdb;
 
@@ -26,13 +29,13 @@
                     $is_enabled = $casino->is_enabled;
 
                     if ($is_enabled) {
-                        $container_class = 'w-1/3 bg-primary-white text-black shadow-lg rounded-lg p-6 transform scale-110 relative';
+                        $container_class = 'w-full sm:w-1/2 md:w-1/3 bg-primary-white text-black shadow-lg rounded-lg p-6 transform hover:scale-105 transition-transform relative';
                         $great_offer_image = '<div class="relative block mt-4">
-                            <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute top-10 w-50 h-20">
+                            <img src="' . get_template_directory_uri() . '/images/GreatOffer/GreatOffer.png" alt="Great Offer" class="absolute top-10 w-32 h-16">
                         </div>';
-                        $activate_button = '<a href="' . esc_url($casino->url) . '" class="mt-6 inline-block px-6 py-2 bg-red-500 hover:bg-green-700 text-white font-bold rounded-full">Activate Bonus</a>';
+                        $activate_button = '<a href="' . esc_url($casino->url) . '" class="mt-6 inline-block px-6 py-2 bg-red-500 hover:bg-red-700 text-white font-bold rounded-full">Activate Bonus</a>';
                     } else {
-                        $container_class = 'w-1/4 bg-cards-purple text-white rounded-lg p-6 relative';
+                        $container_class = 'w-full sm:w-1/2 md:w-1/4 bg-cards-purple text-white rounded-lg p-6 relative';
                         $great_offer_image = '';
                         $activate_button = '<a href="' . esc_url($casino->url) . '" class="mt-6 inline-block px-6 py-2 bg-green-500 hover:bg-green-700 text-white font-bold rounded-full">Activate Bonus</a>';
                     }
@@ -48,11 +51,9 @@
                             <img src="<?php echo get_template_directory_uri() . esc_url( $casino->image_url ); ?>" alt="<?php echo esc_attr($casino->name); ?>" class="mx-auto mb-4 h-20 w-20">
                             <h3 class="text-xl font-bold"><?php echo esc_html($casino->name); ?></h3>
                             <p class="text-sm text-gray-500 mt-1"><?php echo esc_html($casino->code); ?></p>
-                            <span>----------------------</span>
                             <div class="my-6">
                                 <span class="block text-purple-500 text-lg font-bold"><?php echo esc_html($casino->bonus_percent); ?>% up to</span>
                                 <span class="block text-4xl font-extrabold text-gray-900">£<?php echo esc_html($casino->bonus_amount_limit); ?></span>
-                                <span>---------</span>
                                 <p class="text-xs text-gray-400 mt-2">T&C</p>
                             </div>
                             <p class="mt-4 text-gray-300">
