@@ -55,3 +55,80 @@ nav ul li a:hover {
     background-color: #e5e7eb;
 }
 
+
+:root {
+
+    /* Colors: */
+    --unnamed-color-3bdec8: #3BDEC8;
+    --unnamed-color-7d33ff: #7D33FF;
+    --unnamed-color-ffba00: #FFBA00;
+    --unnamed-color-ff4757: #FF4757;
+    --unnamed-color-45c93a: #45C93A;
+    --unnamed-color-1a5bff: #1A5BFF;
+    --unnamed-color-ffffff: #FFFFFF;
+    --unnamed-color-03dde6: #03DDE6;
+    --unnamed-color-30d267: #30D267;
+    --unnamed-color-6c757d: #6C757D;
+    --unnamed-color-ced4da: #CED4DA;
+    ---e3ceff: #E3CEFF;
+    --unnamed-color-aa68c9: #AA68C9;
+    --unnamed-color-462667: #462667;
+    --unnamed-color-8a8fa2: #8A8FA2;
+    --unnamed-color-707070: #707070;
+    --unnamed-color-f1f5f6: #F1F5F6;
+    --unnamed-color-f3f0fa: #F3F0FA;
+    
+    /* Font/text values */
+    --unnamed-font-family-montserrat: Montserrat;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-weight-bold: bold;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-22: 22px;
+    --unnamed-font-size-24: 24px;
+    --unnamed-font-size-28: 28px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-character-spacing--1-1: -1.1px;
+    --unnamed-character-spacing--1-2: -1.2px;
+    --unnamed-character-spacing--0-84: -0.84px;
+    --unnamed-line-spacing-18: 18px;
+    --unnamed-line-spacing-60: 60px;
+    }
+    
+    /* Character Styles */
+    .h2-desktop {
+    font-family: var(--unnamed-font-family-montserrat);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-28);
+    line-height: var(--unnamed-line-spacing-60);
+    letter-spacing: var(--unnamed-character-spacing--0-84);
+    color: var(--unnamed-color-462667);
+    }
+    .h2-mobile {
+    font-family: var(--unnamed-font-family-montserrat);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-24);
+    line-height: var(--unnamed-line-spacing-60);
+    letter-spacing: var(--unnamed-character-spacing--1-2);
+    color: var(--unnamed-color-462667);
+    }
+    .mobile-h3 {
+    font-family: var(--unnamed-font-family-montserrat);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-bold);
+    font-size: var(--unnamed-font-size-22);
+    line-height: var(--unnamed-line-spacing-60);
+    letter-spacing: var(--unnamed-character-spacing--1-1);
+    color: var(--unnamed-color-462667);
+    }
+    .unnamed-character-style-1 {
+    font-family: var(--unnamed-font-family-montserrat);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-14);
+    line-height: var(--unnamed-line-spacing-18);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-707070);
+    }
